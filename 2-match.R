@@ -24,10 +24,6 @@ down <- read.csv("genes_down_regulate.csv", header = TRUE)
 # union of the genes
 df <- rbind(up, down)
 
-# import covid csv
-covid <- read.csv("genes_covid.csv", header = TRUE )
-covid_genes <- covid$gene_name
-
 # sort 
 df <- df[order(df$V2,decreasing = TRUE),]
 
@@ -35,11 +31,11 @@ df <- df[order(df$V2,decreasing = TRUE),]
 m <- duplicated(df$V1)
 df_unique <- df[!m,]
 
-# match and exclude matched results
-excluded <- df_unique[!(df_unique$V1 %in% covid$gene_name),]
+v = c(1:nrow(df_unique))
+plot(v[1:200],df_unique[1:200,2],xlab="ranked genes",ylab="significance",type="p",main="Genes significance distribution")
 
 # select the first one hundres
-my_sample <- excluded[1:100,] 
+my_sample <- df_unique[1:100,] 
 
 # save
-write.csv(my_sample, "exclusive_genes.csv", row.names = FALSE)
+write.csv(my_sample, "most_significant_genes_h1n1.csv", row.names = FALSE)
