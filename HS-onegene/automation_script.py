@@ -6,7 +6,7 @@ gene_list = []
 gene_trans_list = []
 
 # extract gene names 
-with open('../exclusive_genes.csv', mode = 'r') as file:
+with open('../most_significant_genes_h1n1.csv', mode = 'r') as file:
 	csvFile = csv.reader(file)
 
 	for line in csvFile:
