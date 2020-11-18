@@ -1,0 +1,2 @@
+https://www.ncbi.nlm.nih.gov/gene
+(covid-19) AND "Homo sapiens"[porgn:__txid9606]
