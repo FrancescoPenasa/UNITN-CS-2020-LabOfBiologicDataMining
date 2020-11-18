@@ -5,6 +5,9 @@
 # Session Data files
 .RData
 
+# Expression BIG file
+Data/hgnc_filtered_mat.csv
+
 # User-specific files
 .Ruserdata
 
