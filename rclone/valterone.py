@@ -8,7 +8,7 @@ Created on Wed Nov 25 17:29:38 2020
 import pandas as pd
 
 h1n1 = pd.read_csv("../Data/h1n1.csv",header = None)
-al = pd.read_csv("genehome_history.csv")
+al = pd.read_csv("../Data/genehome_history.csv")
 
 h1n1 = list(h1n1.iloc[:,0])
 al = al[["id","lgn"]]
