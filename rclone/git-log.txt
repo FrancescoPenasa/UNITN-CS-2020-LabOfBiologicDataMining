@@ -1,0 +1,56 @@
+commit 55bd60019e12a65430867a4c334f2d0ab49bdc3e
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Nov 19 17:01:56 2020 +0000
+
+    Version v1.53.3
+
+commit c8b11d27e1fe261fdfba6b8910fda69356c9c777
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 18 14:02:53 2020 +0000
+
+    random: seed math/rand in one place with crypto strong seed #4783
+    
+    This shouldn't be read as encouraging the use of math/rand instead of
+    crypto/rand in security sensitive contexts, rather as a safer default
+    if that does happen by accident.
+
+commit 4c215cc81ec6143ae3c64633700cb341ca28df2d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 18 12:03:01 2020 +0000
+
+    random: fix incorrect use of math/rand instead of crypto/rand CVE-2020-28924
+    
+    For implications see the linked issue.
+    
+    Fixes #4783
+
+commit 4df333255af8e447ac3095a129ba4037d05fb527
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Nov 13 14:37:43 2020 +0000
+
+    sharefile: fix backend due to API swapping integers for strings
+    
+    For some reason the API started returning some integers as strings in
+    JSON. This is probably OK in Javascript but it upsets Go.
+    
+    This is easily fixed with the `json:"name,size"` struct tag.
+
+commit 843d684568bb93a099f5efe00dbb0045f01d55c2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Nov 6 16:44:05 2020 +0000
+
+    vfs: fix vfs/refresh calls with fs= parameter
+    
+    Before this change rclone gave an error when the fs parameter was
+    provided.
+    
+    This change removes the fs parameter from the parameters once it has
+    been read which avoids the error.
+    
+    See: https://forum.rclone.org/t/precaching-with-vfs-refresh-fails-with-an-error-when-having-multiple-cloud-drives/20267
+
+commit 46ea3d93b5a072dd11cfc6460b81e78cfd5400b1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Oct 26 15:40:37 2020 +0000
+
+    Start v1.53.3-DEV development
