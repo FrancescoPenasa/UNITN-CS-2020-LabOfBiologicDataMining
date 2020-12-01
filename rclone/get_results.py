@@ -12,8 +12,6 @@ file_names = pd.read_csv("../Data/expansion_files.csv",header=None)
 file_names = list(file_names[0])
 
 for file in file_names:
-    command = 'rclone copy "gDrive unitn":experiments_results/'+file+" /dest/"
+    command = 'rclone copy "gDrive unitn":experiments_results/'+file+" ../Data/h1n1_expansion/ --drive-shared-with-me"
     print(sub.run(command,shell=True))
-    if file == file_names[0]:
-        break
     
