@@ -15,7 +15,7 @@ al = al[["id","lgn"]]
 
 done = al[al["lgn"].isin(h1n1)]
 
-file_names = [str(id)+"_Hs.interactions\n" for id in list(done["id"])]
+file_names = [str(id)+"_Hs.expansion\n" for id in list(done["id"])]
 
 with open("../Data/expansion_files.csv","w") as out:
     out.writelines(file_names)
